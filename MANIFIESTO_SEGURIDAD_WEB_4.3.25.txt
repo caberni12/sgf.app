@@ -1,0 +1,5 @@
+SGF WEB PRODUCCION SEGURA PLANA 4.3.25
+
+sgf-login.4325.js | SHA256 de7cd7eaf0d74cd6badbf3764e8da651df26bcd9e7e027cb822db48e47ed42a2 | fuente 318548 | distribuido 425267
+sgf-shell.4325.js | SHA256 c0820a47cfe9c131241b16916e2e8dd4f2501989297c51af4a0bf97c9145fd23 | fuente 350951 | distribuido 468471
+sgf-module.4325.js | SHA256 fbd0a9a70df2a9ff4fa3abc3dbe3500658f584ae13676461346822ccb60074fa | fuente 1205295 | distribuido 1607597
