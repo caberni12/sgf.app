@@ -15,74 +15,6 @@ body.modo-modulo-iframe :where(.dashboard-grid,.dashboard-insights,.kpi-grid,.ca
 body.modo-modulo-iframe :where(img,svg,canvas,video){max-width:100%}
 
 /* --------------------------------------------------------------------------
-   REPORTES · anillos KPI, donut, tendencia y tarjetas
-   -------------------------------------------------------------------------- */
-.modulo-reportes .report-executive-dashboard,
-.modulo-reportes .report-executive-dashboard>*{min-width:0;max-width:100%}
-.modulo-reportes .report-gauge-grid{
-  display:grid!important;
-  grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr))!important;
-  gap:12px!important;
-  width:100%;
-}
-.modulo-reportes .report-gauge-card{
-  width:100%;max-width:100%;min-width:0;overflow:hidden;
-  grid-template-columns:78px minmax(0,1fr)!important;
-  align-items:center;
-}
-.modulo-reportes .report-gauge-ring{
-  width:78px!important;height:78px!important;min-width:78px!important;min-height:78px!important;
-  max-width:78px!important;max-height:78px!important;aspect-ratio:1/1;
-  flex:0 0 78px;border-radius:50%!important;box-sizing:border-box;
-}
-.modulo-reportes .report-gauge-ring:after{border-radius:50%!important}
-.modulo-reportes .report-gauge-copy{min-width:0;max-width:100%;overflow:hidden}
-.modulo-reportes .report-gauge-copy :where(b,em){white-space:normal;overflow-wrap:anywhere;word-break:normal}
-
-.modulo-reportes .report-visual-grid{
-  grid-template-columns:minmax(0,1.35fr) minmax(300px,.8fr)!important;
-  width:100%;max-width:100%;align-items:start;
-}
-.modulo-reportes .report-visual-grid>*{width:100%;min-width:0;max-width:100%}
-.modulo-reportes .report-chart-card{width:100%;max-width:100%;min-width:0;overflow:hidden}
-.modulo-reportes .report-chart-card .card-header{min-width:0;max-width:100%;flex-wrap:wrap}
-.modulo-reportes .report-chart-card .card-header>div{min-width:0;flex:1 1 220px}
-.modulo-reportes .report-line-chart{width:100%;max-width:100%;min-width:0;overflow:hidden}
-.modulo-reportes .report-line-chart svg{display:block;width:100%;max-width:100%;height:100%;overflow:visible}
-
-.modulo-reportes .report-donut-layout{
-  grid-template-columns:minmax(126px,146px) minmax(0,1fr)!important;
-  width:100%;max-width:100%;min-width:0;
-}
-.modulo-reportes .report-donut-svg{
-  width:138px!important;height:138px!important;max-width:138px!important;max-height:138px!important;
-  min-width:0;aspect-ratio:1/1;overflow:visible;
-}
-.modulo-reportes .report-donut-svg svg{display:block;width:100%;height:100%;max-width:100%;overflow:visible}
-.modulo-reportes .report-donut-legends{min-width:0;max-width:100%;overflow:hidden}
-.modulo-reportes .report-donut-legend{width:100%;max-width:100%;min-width:0}
-.modulo-reportes .report-donut-legend span{min-width:0}
-.modulo-reportes .report-bar-list,.modulo-reportes .report-bar-row{max-width:100%;min-width:0}
-
-@media(max-width:1180px){
-  .modulo-reportes .report-visual-grid{grid-template-columns:1fr 1fr!important}
-  .modulo-reportes .report-chart-wide{grid-column:1/-1!important;grid-row:auto!important}
-}
-@media(max-width:760px){
-  .modulo-reportes .report-visual-grid{grid-template-columns:1fr!important}
-  .modulo-reportes .report-chart-wide{grid-column:auto!important}
-  .modulo-reportes .report-donut-layout{grid-template-columns:126px minmax(0,1fr)!important}
-}
-@media(max-width:520px){
-  .modulo-reportes .report-gauge-card{grid-template-columns:66px minmax(0,1fr)!important;padding:12px!important}
-  .modulo-reportes .report-gauge-ring{width:64px!important;height:64px!important;min-width:64px!important;min-height:64px!important;max-width:64px!important;max-height:64px!important}
-  .modulo-reportes .report-donut-layout{grid-template-columns:1fr!important;gap:8px!important}
-  .modulo-reportes .report-donut-svg{justify-self:center}
-  .modulo-reportes .report-donut-legends{grid-template-columns:repeat(2,minmax(0,1fr))!important;width:100%}
-}
-@media(max-width:340px){.modulo-reportes .report-donut-legends{grid-template-columns:1fr!important}}
-
-/* --------------------------------------------------------------------------
    ACTUALIZACIÓN DE APLICACIÓN · formulario, metadatos, filtros y tablas
    -------------------------------------------------------------------------- */
 .modulo-actualizaciones-app .content,
@@ -135,4 +67,3 @@ body.modo-modulo-iframe :where(img,svg,canvas,video){max-width:100%}
   .modulo-actualizaciones-app .form-actions{display:grid!important;grid-template-columns:1fr}
   .modulo-actualizaciones-app .form-actions .btn{width:100%}
 }
-\n\n/* ==========================================================================\n   SGF WEB 4.3.25 · CORRECCIÓN FINAL DASHBOARD REPORTES\n   Evita recortes verticales, scroll interno no deseado y centra series de\n   un solo período. Esta capa va al final para ganar la cascada sin afectar\n   otros módulos.\n   ========================================================================== */\n.modulo-reportes .report-visual-grid{\n  grid-template-columns:minmax(0,1.35fr) minmax(320px,.8fr)!important;\n  grid-template-rows:max-content max-content!important;\n  align-items:start!important;\n}\n.modulo-reportes .report-chart-wide{grid-row:1 / span 2!important;align-self:start!important}\n.modulo-reportes .report-chart-card{height:auto!important;min-height:0;overflow:hidden!important}\n.modulo-reportes .report-visual-grid>.report-chart-card:nth-child(2){min-height:292px!important}\n.modulo-reportes .report-donut-layout{\n  min-height:186px!important;\n  padding:8px 0 14px!important;\n  align-items:center!important;\n  align-content:center!important;\n}\n.modulo-reportes .report-donut-svg{\n  width:132px!important;height:132px!important;\n  max-width:132px!important;max-height:132px!important;\n  align-self:center!important;justify-self:center!important;\n}\n.modulo-reportes .report-donut-legends{align-self:center!important}\n.modulo-reportes .report-bar-list{\n  max-height:none!important;\n  overflow:visible!important;\n  padding:2px 3px 4px!important;\n}\n.modulo-reportes .report-line-chart{\n  height:260px!important;\n  min-height:260px!important;\n  padding-top:0!important;\n  overflow:hidden!important;\n}\n.modulo-reportes .report-line-single-guide{\n  stroke:currentColor;\n  stroke-width:2;\n  stroke-dasharray:7 7;\n  opacity:.22;\n  vector-effect:non-scaling-stroke;\n}\n.modulo-reportes .report-line-chart.is-single .report-line-point circle{r:8}\n\n@media(max-width:1180px){\n  .modulo-reportes .report-visual-grid{grid-template-columns:1fr 1fr!important;grid-template-rows:auto!important}\n  .modulo-reportes .report-chart-wide{grid-column:1/-1!important;grid-row:auto!important}\n  .modulo-reportes .report-visual-grid>.report-chart-card:nth-child(2){min-height:280px!important}\n}\n@media(max-width:760px){\n  .modulo-reportes .report-visual-grid{grid-template-columns:1fr!important}\n  .modulo-reportes .report-chart-wide{grid-column:auto!important}\n  .modulo-reportes .report-visual-grid>.report-chart-card:nth-child(2){min-height:0!important}\n  .modulo-reportes .report-donut-layout{min-height:160px!important}\n  .modulo-reportes .report-line-chart{height:240px!important;min-height:240px!important}\n}\n@media(max-width:520px){\n  .modulo-reportes .report-line-chart{height:220px!important;min-height:220px!important;overflow-x:auto!important;overflow-y:hidden!important}\n  .modulo-reportes .report-line-chart svg{min-width:0!important}\n  .modulo-reportes .report-donut-layout{min-height:0!important;padding-bottom:8px!important}\n}\n

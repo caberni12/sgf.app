@@ -1,0 +1,73 @@
+/* ============================================================================
+   SGF WEB 4.3.26 · REPORTES ESTABLE
+   Hoja exclusiva del módulo Reportes. Se carga al final y es la única capa
+   propietaria de la geometría de dashboards/gráficos de este módulo.
+   ============================================================================ */
+body.modulo-reportes{overflow-x:hidden!important}
+.modulo-reportes #content,.modulo-reportes .content{min-width:0;max-width:100%;overflow:visible!important}
+.modulo-reportes .card,.modulo-reportes .metric-card{box-sizing:border-box;min-width:0;max-width:100%}
+.modulo-reportes .report-executive-dashboard,.modulo-reportes .report-executive-dashboard>*{min-width:0;max-width:100%}
+
+.modulo-reportes .report-gauge-grid{display:grid!important;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr))!important;gap:12px!important;width:100%;align-items:stretch}
+.modulo-reportes .report-gauge-card{width:100%;min-width:0;max-width:100%;overflow:hidden!important;display:grid!important;grid-template-columns:78px minmax(0,1fr)!important;align-items:center;box-sizing:border-box}
+.modulo-reportes .report-gauge-ring{width:78px!important;height:78px!important;min-width:78px!important;min-height:78px!important;max-width:78px!important;max-height:78px!important;aspect-ratio:1/1!important;border-radius:50%!important;box-sizing:border-box;flex:none!important}
+.modulo-reportes .report-gauge-ring:after{border-radius:50%!important}
+.modulo-reportes .report-gauge-copy{min-width:0;max-width:100%;overflow:hidden}
+.modulo-reportes .report-gauge-copy :where(b,em){white-space:normal;overflow-wrap:anywhere}
+
+.modulo-reportes .report-visual-grid{display:grid!important;grid-template-columns:minmax(0,1.35fr) minmax(320px,.8fr)!important;grid-template-rows:auto auto!important;gap:16px!important;width:100%;max-width:100%;align-items:start!important}
+.modulo-reportes .report-visual-grid>*{width:100%;min-width:0;max-width:100%;box-sizing:border-box}
+.modulo-reportes .report-chart-card{height:auto!important;min-height:0!important;overflow:visible!important}
+.modulo-reportes .report-chart-wide{grid-column:1;grid-row:1 / span 2;align-self:start!important}
+.modulo-reportes .report-chart-card .card-header{min-width:0;max-width:100%;flex-wrap:wrap}
+.modulo-reportes .report-chart-card .card-header>div{min-width:0;flex:1 1 220px}
+
+.modulo-reportes .report-line-chart{position:relative;width:100%;height:260px!important;min-height:260px!important;max-width:100%;overflow:hidden!important;padding:0!important}
+.modulo-reportes .report-line-chart svg{display:block;width:100%!important;height:100%!important;max-width:100%;overflow:visible!important}
+.modulo-reportes .report-line-single-guide{stroke:currentColor;stroke-width:2;stroke-dasharray:7 7;opacity:.22;vector-effect:non-scaling-stroke}
+.modulo-reportes .report-line-chart.is-single .report-line-point circle{r:8}
+
+.modulo-reportes .report-donut-layout{display:grid!important;grid-template-columns:150px minmax(0,1fr)!important;gap:16px!important;width:100%;max-width:100%;min-width:0;min-height:190px!important;padding:8px 0 12px!important;align-items:center!important;overflow:visible!important}
+.modulo-reportes .report-donut-svg{display:grid!important;place-items:center;width:140px!important;height:140px!important;min-width:140px!important;min-height:140px!important;max-width:140px!important;max-height:140px!important;aspect-ratio:1/1!important;align-self:center!important;justify-self:center!important;overflow:visible!important}
+.modulo-reportes .report-donut-svg svg{display:block;width:140px!important;height:140px!important;overflow:visible!important}
+.modulo-reportes .report-donut-legends{min-width:0;max-width:100%;overflow:visible!important;align-self:center!important}
+.modulo-reportes .report-donut-legend{width:100%;max-width:100%;min-width:0}
+.modulo-reportes .report-donut-legend span{min-width:0}
+
+.modulo-reportes .report-bar-list{width:100%;max-width:100%;min-width:0;max-height:none!important;overflow:visible!important;padding:2px 3px 4px!important}
+.modulo-reportes .report-bar-row{width:100%;max-width:100%;min-width:0}
+.modulo-reportes .report-visual-grid>.report-chart-card:nth-child(2){min-height:285px!important}
+
+/* Las tablas de Reportes desplazan horizontalmente dentro de su tarjeta; nunca el módulo completo. */
+.modulo-reportes .table-wrap{width:100%;max-width:100%;min-width:0;overflow-x:auto!important;overflow-y:visible!important;-webkit-overflow-scrolling:touch}
+.modulo-reportes .table-wrap table{min-width:100%;max-width:none}
+
+/* Evento de reasignación en trazabilidad Web. */
+.modulo-reportes .route-reassignment-stage,
+.route-timeline .route-reassignment-stage{border-radius:14px}
+.route-timeline .route-reassignment-stage i{background:#2563eb!important;box-shadow:0 0 0 3px color-mix(in srgb,#2563eb 22%,transparent)!important}
+.route-timeline .route-reassignment-transfer{display:block;margin-top:2px;color:var(--text);font-size:11px;line-height:1.35;overflow-wrap:anywhere}
+.route-timeline .route-reassignment-reason{display:block;color:var(--muted);overflow-wrap:anywhere}
+.route-timeline.has-reassignment{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))!important}
+
+@media(max-width:1180px){
+  .modulo-reportes .report-visual-grid{grid-template-columns:1fr 1fr!important;grid-template-rows:auto!important}
+  .modulo-reportes .report-chart-wide{grid-column:1/-1!important;grid-row:auto!important}
+  .modulo-reportes .report-visual-grid>.report-chart-card:nth-child(2){min-height:275px!important}
+}
+@media(max-width:760px){
+  .modulo-reportes .report-visual-grid{grid-template-columns:1fr!important}
+  .modulo-reportes .report-chart-wide{grid-column:auto!important}
+  .modulo-reportes .report-donut-layout{grid-template-columns:132px minmax(0,1fr)!important;min-height:168px!important}
+  .modulo-reportes .report-donut-svg,.modulo-reportes .report-donut-svg svg{width:126px!important;height:126px!important;min-width:126px!important;min-height:126px!important;max-width:126px!important;max-height:126px!important}
+  .modulo-reportes .report-line-chart{height:240px!important;min-height:240px!important}
+}
+@media(max-width:520px){
+  .modulo-reportes .report-gauge-card{grid-template-columns:66px minmax(0,1fr)!important;padding:12px!important}
+  .modulo-reportes .report-gauge-ring{width:64px!important;height:64px!important;min-width:64px!important;min-height:64px!important;max-width:64px!important;max-height:64px!important}
+  .modulo-reportes .report-donut-layout{grid-template-columns:1fr!important;min-height:0!important;gap:8px!important;padding-bottom:8px!important}
+  .modulo-reportes .report-donut-svg{justify-self:center!important}
+  .modulo-reportes .report-donut-legends{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;width:100%}
+  .modulo-reportes .report-line-chart{height:220px!important;min-height:220px!important;overflow-x:hidden!important;overflow-y:hidden!important}
+}
+@media(max-width:340px){.modulo-reportes .report-donut-legends{grid-template-columns:1fr!important}}
