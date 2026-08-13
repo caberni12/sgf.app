@@ -1,0 +1,137 @@
+/* ==========================================================================
+   SGF WEB 4.3.24 · ESTILOS REALES ALINEADOS DE MÓDULOS
+   Capa final y encapsulada. Evita que estilos globales posteriores deformen
+   Reportes y Publicación de Aplicación dentro del iframe principal.
+   ========================================================================== */
+
+/* Base segura para todos los módulos incrustados: ningún hijo puede ampliar
+   el ancho del iframe. El desplazamiento horizontal queda en el componente
+   que realmente lo necesita (por ejemplo, una tabla), no en toda la página. */
+body.modo-modulo-iframe{width:100%;max-width:100%;overflow-x:clip}
+body.modo-modulo-iframe .main-area,
+body.modo-modulo-iframe .content,
+body.modo-modulo-iframe .content>*{min-width:0;max-width:100%}
+body.modo-modulo-iframe :where(.dashboard-grid,.dashboard-insights,.kpi-grid,.card,.card-header,.form-grid,.table-wrap){min-width:0;max-width:100%}
+body.modo-modulo-iframe :where(img,svg,canvas,video){max-width:100%}
+
+/* --------------------------------------------------------------------------
+   REPORTES · anillos KPI, donut, tendencia y tarjetas
+   -------------------------------------------------------------------------- */
+.modulo-reportes .report-executive-dashboard,
+.modulo-reportes .report-executive-dashboard>*{min-width:0;max-width:100%}
+.modulo-reportes .report-gauge-grid{
+  display:grid!important;
+  grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr))!important;
+  gap:12px!important;
+  width:100%;
+}
+.modulo-reportes .report-gauge-card{
+  width:100%;max-width:100%;min-width:0;overflow:hidden;
+  grid-template-columns:78px minmax(0,1fr)!important;
+  align-items:center;
+}
+.modulo-reportes .report-gauge-ring{
+  width:78px!important;height:78px!important;min-width:78px!important;min-height:78px!important;
+  max-width:78px!important;max-height:78px!important;aspect-ratio:1/1;
+  flex:0 0 78px;border-radius:50%!important;box-sizing:border-box;
+}
+.modulo-reportes .report-gauge-ring:after{border-radius:50%!important}
+.modulo-reportes .report-gauge-copy{min-width:0;max-width:100%;overflow:hidden}
+.modulo-reportes .report-gauge-copy :where(b,em){white-space:normal;overflow-wrap:anywhere;word-break:normal}
+
+.modulo-reportes .report-visual-grid{
+  grid-template-columns:minmax(0,1.35fr) minmax(300px,.8fr)!important;
+  width:100%;max-width:100%;align-items:start;
+}
+.modulo-reportes .report-visual-grid>*{width:100%;min-width:0;max-width:100%}
+.modulo-reportes .report-chart-card{width:100%;max-width:100%;min-width:0;overflow:hidden}
+.modulo-reportes .report-chart-card .card-header{min-width:0;max-width:100%;flex-wrap:wrap}
+.modulo-reportes .report-chart-card .card-header>div{min-width:0;flex:1 1 220px}
+.modulo-reportes .report-line-chart{width:100%;max-width:100%;min-width:0;overflow:hidden}
+.modulo-reportes .report-line-chart svg{display:block;width:100%;max-width:100%;height:100%;overflow:visible}
+
+.modulo-reportes .report-donut-layout{
+  grid-template-columns:minmax(126px,146px) minmax(0,1fr)!important;
+  width:100%;max-width:100%;min-width:0;
+}
+.modulo-reportes .report-donut-svg{
+  width:138px!important;height:138px!important;max-width:138px!important;max-height:138px!important;
+  min-width:0;aspect-ratio:1/1;overflow:visible;
+}
+.modulo-reportes .report-donut-svg svg{display:block;width:100%;height:100%;max-width:100%;overflow:visible}
+.modulo-reportes .report-donut-legends{min-width:0;max-width:100%;overflow:hidden}
+.modulo-reportes .report-donut-legend{width:100%;max-width:100%;min-width:0}
+.modulo-reportes .report-donut-legend span{min-width:0}
+.modulo-reportes .report-bar-list,.modulo-reportes .report-bar-row{max-width:100%;min-width:0}
+
+@media(max-width:1180px){
+  .modulo-reportes .report-visual-grid{grid-template-columns:1fr 1fr!important}
+  .modulo-reportes .report-chart-wide{grid-column:1/-1!important;grid-row:auto!important}
+}
+@media(max-width:760px){
+  .modulo-reportes .report-visual-grid{grid-template-columns:1fr!important}
+  .modulo-reportes .report-chart-wide{grid-column:auto!important}
+  .modulo-reportes .report-donut-layout{grid-template-columns:126px minmax(0,1fr)!important}
+}
+@media(max-width:520px){
+  .modulo-reportes .report-gauge-card{grid-template-columns:66px minmax(0,1fr)!important;padding:12px!important}
+  .modulo-reportes .report-gauge-ring{width:64px!important;height:64px!important;min-width:64px!important;min-height:64px!important;max-width:64px!important;max-height:64px!important}
+  .modulo-reportes .report-donut-layout{grid-template-columns:1fr!important;gap:8px!important}
+  .modulo-reportes .report-donut-svg{justify-self:center}
+  .modulo-reportes .report-donut-legends{grid-template-columns:repeat(2,minmax(0,1fr))!important;width:100%}
+}
+@media(max-width:340px){.modulo-reportes .report-donut-legends{grid-template-columns:1fr!important}}
+
+/* --------------------------------------------------------------------------
+   ACTUALIZACIÓN DE APLICACIÓN · formulario, metadatos, filtros y tablas
+   -------------------------------------------------------------------------- */
+.modulo-actualizaciones-app .content,
+.modulo-actualizaciones-app .content>*,
+.modulo-actualizaciones-app .dashboard-grid,
+.modulo-actualizaciones-app .dashboard-grid>.card{width:100%;min-width:0;max-width:100%}
+.modulo-actualizaciones-app .dashboard-grid{grid-template-columns:minmax(0,1.2fr) minmax(320px,.8fr)!important;align-items:start}
+.modulo-actualizaciones-app .dashboard-grid>.card{overflow:hidden}
+.modulo-actualizaciones-app .card-header{min-width:0;max-width:100%;flex-wrap:wrap}
+.modulo-actualizaciones-app .card-header>div{min-width:0;flex:1 1 260px}
+.modulo-actualizaciones-app .card-header :where(h3,p){overflow-wrap:anywhere}
+
+.modulo-actualizaciones-app .app-update-upload-form{
+  display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  width:100%;max-width:100%;min-width:0;gap:14px;
+}
+.modulo-actualizaciones-app .app-update-upload-form>*{min-width:0;max-width:100%}
+.modulo-actualizaciones-app .app-update-upload-form .full,
+.modulo-actualizaciones-app .app-update-upload-form .form-actions{grid-column:1/-1!important}
+.modulo-actualizaciones-app .app-apk-drop{position:relative;width:100%;max-width:100%;overflow:hidden}
+.modulo-actualizaciones-app .app-apk-metadata{
+  width:100%;max-width:100%;min-width:0;
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+}
+.modulo-actualizaciones-app .app-apk-metadata>span{min-width:0;max-width:100%;overflow:hidden}
+.modulo-actualizaciones-app .app-apk-metadata .hash{grid-column:1/-1!important}
+.modulo-actualizaciones-app .app-apk-metadata b{max-width:100%;overflow-wrap:anywhere;word-break:break-word}
+.modulo-actualizaciones-app .app-upload-progress,
+.modulo-actualizaciones-app .app-upload-success,
+.modulo-actualizaciones-app .advanced-filter-panel{width:100%;max-width:100%;min-width:0}
+.modulo-actualizaciones-app .form-actions{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:10px}
+.modulo-actualizaciones-app .form-actions .btn{max-width:100%;white-space:normal;text-align:center}
+.modulo-actualizaciones-app .table-wrap{
+  width:100%;max-width:100%;min-width:0;overflow-x:auto!important;overflow-y:hidden;
+  -webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;
+}
+.modulo-actualizaciones-app .table-wrap table{width:max-content;min-width:100%;max-width:none;table-layout:auto}
+
+@media(max-width:1180px){.modulo-actualizaciones-app .dashboard-grid{grid-template-columns:1fr!important}}
+@media(max-width:760px){
+  .modulo-actualizaciones-app .app-update-upload-form{grid-template-columns:1fr!important}
+  .modulo-actualizaciones-app .app-update-upload-form .full,
+  .modulo-actualizaciones-app .app-update-upload-form .form-actions{grid-column:1!important}
+  .modulo-actualizaciones-app .app-apk-metadata{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .modulo-actualizaciones-app .app-apk-metadata .hash{grid-column:1/-1!important}
+}
+@media(max-width:520px){
+  .modulo-actualizaciones-app .app-apk-metadata{grid-template-columns:1fr!important}
+  .modulo-actualizaciones-app .app-apk-metadata .hash{grid-column:1!important}
+  .modulo-actualizaciones-app .form-actions{display:grid!important;grid-template-columns:1fr}
+  .modulo-actualizaciones-app .form-actions .btn{width:100%}
+}
